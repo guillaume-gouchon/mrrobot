@@ -1,0 +1,78 @@
+<html>
+<head>
+	<title>MrRobot</title>
+</head>
+<body>
+
+	<div class="mouth-container">
+		<div class="mouth hide"></div>
+	</div>
+
+	<div id="console"></div>
+
+	<a id="refresh-btn" href=""></a>
+
+	<style>
+		body {
+			background: black;
+			margin: 0;
+			overflow: hidden;
+		}
+
+		.mouth-container {
+			position: fixed;
+			height: 45%;
+			width: 100%;
+			background-color: black;
+			z-index: 100;
+			opacity: 0.8;
+		}
+
+		.mouth {
+			position: fixed;
+			top: 30%;
+			height: 40px;
+			width: 100%;
+			opacity: 0.5;
+			background: radial-gradient(ellipse at center, #ff3019 50%,#000000 75%);
+			animation: speak-animation 1s infinite;
+		}
+
+		#refresh-btn {
+			position: absolute;
+			z-index: 1000;
+			top: 0;
+			right: 0;
+			width: 100px;
+			height: 100px;
+		}
+
+		.hide {
+			display: none;
+		}
+
+		@keyframes speak-animation {
+			0%   { transform: translate(30%,0); }
+			50% { transform: translate(-30%,0); }
+			100%   { transform: translate(30%,0); }
+		}
+
+		#console {
+			position: absolute;
+			z-index: 5;
+			top: 50%;
+			left: 15%;
+			width: 33%;
+			color: green;
+			font-size: 1.0rem;
+			font-weight: 300;
+			font-family: monospace;
+		}
+	</style>
+
+	<script type="text/javascript" src="./jquery.js"></script>
+	<script type="text/javascript" src="./speak.js"></script>
+	<script type="text/javascript" src="./listen.js"></script>
+	<script type="text/javascript" src="./console.js"></script>
+</body>
+</html>
