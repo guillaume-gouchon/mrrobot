@@ -2,13 +2,6 @@
 
 apt-get update
 
-# LCD screen support
-# cd ~/
-# wget http://www.waveshare.net/w/upload/7/73/LCD-show.tar.gz
-# tar xvf LCD-show.tar.gz
-# cd LCD-show/
-# sudo ./LCD4-show
-
 # speech recognition dependencies
 apt-get install bison libasound2-dev swig python-dev mplayer
 
