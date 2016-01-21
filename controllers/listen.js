@@ -2,7 +2,7 @@
 
 var exec = require('child_process').exec;
 
-var LANGUAGE = 'fr_FR';
+var LANGUAGE = 'en-us';
 var WORDS_FOLDER = __dirname + '/../speech_recognition';
 
 module.exports = function (callback) {
