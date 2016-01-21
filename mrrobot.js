@@ -26,17 +26,17 @@ app.listen(3000, function () {
 });
 
 // start listening
-listen({
+// listen({
 
-	joke: joke,
+// 	joke: joke,
 
-	fun: function () {
-		speak.say('Comme ma bite');
-	}
+// 	fun: function () {
+// 		speak.say('Comme ma bite');
+// 	}
 
-});
+// });
 
 setTimeout(function() {
 	// say startup fun
 	speak.say(sentences.getStartup());
-}, 10000);
+}, 12000);
