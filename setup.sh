@@ -33,7 +33,7 @@ sudo mkdir -p `pkg-config --variable=modeldir pocketsphinx`/fr_FR/fr_FR
 sudo mv * `pkg-config --variable=modeldir pocketsphinx`/fr_FR/fr_FR
 
 # miscellaneous dependencies
-apt-get install xdotool google-chrome-stable espeak git
+apt-get install xdotool google-chrome-stable espeak
 
 # install node
 curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
