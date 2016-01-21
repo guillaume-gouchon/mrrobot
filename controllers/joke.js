@@ -1,38 +1,23 @@
 'use strict';
 
-var request = require('request');
-var cheerio = require('cheerio');
+var speak = require('./speak');
+var sentences = require('../data/sentences');
+var fs = require('fs');
 
-var WEBSITE_URL = 'http://humour-blague.com/blagues-2/index.php';
-var LANGUAGE = 'fr';
+var jokes = JSON.parse(fs.readFileSync('./data/jokes.json', 'utf8'));
 
-function replaceAll(str, find, replace) {
-	return str.replace(new RegExp(find, 'g'), replace);
+function getRandomJoke() {
+    return jokes[parseInt(Math.random() * jokes.length)];
 }
 
-module.exports = function (callback, filters) {
-	console.log('finding a joke...');
-
-	request(WEBSITE_URL, function(error, response, html){
-        if(!error){
-            var joke = '';
-
-            var $ = cheerio.load(html);
-            var lines = $('table .blague')[0].children;
-
-            var line;
-			for (var n = 0; n < lines.length; n++) {
-				line = lines[n].data;
-				if (line) {
-					line = replaceAll(line, '"', '');
-            		joke += line;
-            	}
-            }
-
-            callback(joke);
-        } else {
-        	callback(null);
-        }
+module.exports = function () { 
+    speak.say(sentences.getIntro(), function () {
+        setTimeout(function () {
+            speak.say(getRandomJoke(), function () {
+                setTimeout(function () {
+                    speak.say(sentences.getOutro());
+                }, 1000);
+            });
+        }, 500);
     });
-
 };
