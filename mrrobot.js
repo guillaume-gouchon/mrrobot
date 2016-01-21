@@ -36,5 +36,7 @@ listen({
 
 });
 
-// say startup fun
-speak.say(sentences.getStartup());
+setTimeout(function() {
+	// say startup fun
+	speak.say(sentences.getStartup());
+}, 3000);
