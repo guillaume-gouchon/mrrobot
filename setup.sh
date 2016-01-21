@@ -26,6 +26,7 @@ make check
 sudo make install
 
 # get French language for pocketsphinx
+cd ~/
 wget -O lium_french_f0.tar.gz http://sourceforge.net/projects/cmusphinx/files/Acoustic%20and%20Language%20Models/Archive/French%20F0%20Broadcast%20News%20Acoustic%20Model/lium_french_f0.tar.gz/download
 tar -xvzf lium_french_f0.tar.gz
 cd lium_french_f0/
@@ -33,7 +34,7 @@ sudo mkdir -p `pkg-config --variable=modeldir pocketsphinx`/fr_FR/fr_FR
 sudo mv * `pkg-config --variable=modeldir pocketsphinx`/fr_FR/fr_FR
 
 # miscellaneous dependencies
-apt-get install xdotool google-chrome-stable espeak
+apt-get install xautomation espeak
 
 # install node
 curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -

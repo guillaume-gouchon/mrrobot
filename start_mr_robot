@@ -1,5 +1,4 @@
 #!/bin/bash
 cd ~/mrrobot;
 git pull;
-node mrrobot.js & google-chrome --fullscreen http://localhost:3000;
-xdotool key F11 # hit full screen
+node mrrobot.js & xte 'sleep 3' 'key F11' & epiphany-browser http://localhost:3000;
