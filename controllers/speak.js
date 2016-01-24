@@ -2,7 +2,7 @@
 
 var exec = require('child_process').exec;
 
-var PITCH = 20;
+var PITCH = 80;
 var LANGUAGE = 'fr';
 
 var isSpeaking = false;
@@ -14,7 +14,7 @@ module.exports = {
 		if (!isSpeaking) {
 			isSpeaking = true;
 			
-			var command = 'espeak -s 200 -p ' + PITCH + ' -v ' + LANGUAGE  + ' -m "' + text + '"'; 
+			var command = 'espeak -s 170 -p ' + PITCH + ' -v ' + LANGUAGE  + ' -m "' + text + '"'; 
 			exec(command, function (error, stdout, stderr) {
 				isSpeaking = false;
 				

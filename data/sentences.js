@@ -33,11 +33,11 @@ module.exports = {
 	},
 
 	getIntro: function () {
-		return INTRO[parseInt(Math.random() * INTRO.length)];
+		return INTROS[parseInt(Math.random() * INTROS.length)];
 	},
 
 	getOutro: function () {
-		return OUTRO[parseInt(Math.random() * OUTRO.length)];
+		return OUTROS[parseInt(Math.random() * OUTROS.length)];
 	}
 
 };

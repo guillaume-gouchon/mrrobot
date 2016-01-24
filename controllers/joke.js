@@ -16,8 +16,8 @@ module.exports = function () {
             speak.say(getRandomJoke(), function () {
                 setTimeout(function () {
                     speak.say(sentences.getOutro());
-                }, 1000);
+                }, 1400);
             });
-        }, 500);
+        }, 600);
     });
 };
