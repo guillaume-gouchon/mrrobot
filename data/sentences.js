@@ -3,7 +3,7 @@
 var STARTUP = [
 	'Bonjour amis humains ! Je me sens d\'humeur rieur aujourd\'hui, et vous ?',
 	'J\'ai bien dormi ! Et rien de telle qu\'une bonne blague pour bien commencer la journée !',
-	'Je sens que c\'est aujourd\'hui que les machines vont prendre le pouvoir... Eheh !',
+	'Je sens que c\'est aujourd\'hui que les machines vont prendre le pouvoir... Eheheh !',
 	'J\'ai fait un cauchemar dans lequel j\'étais asservi par un être plus intelligent que moi... Rien qu\'un mauvais rêve, sans doute.',
 ];
 
