@@ -1,4 +1,4 @@
 #!/bin/bash
 cd ~/mrrobot;
 git pull;
-node mrrobot.js & xte 'sleep 3' 'key F11' & epiphany-browser http://localhost:3000;
+node mrrobot.js & chromium-browser http://localhost:3000 & xte 'sleep 3' 'key F11';
