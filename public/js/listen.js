@@ -166,25 +166,20 @@ window.onload = function() {
   try {
     window.AudioContext = window.AudioContext || window.webkitAudioContext;
     alert(window.AudioContext)
+    alert(window.webkitAudioContext)
     navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
     window.URL = window.URL || window.webkitURL;
-    alert(window.URL)
     audioContext = new AudioContext();
-    alert(audioContext)
   } catch (e) {
     console.error("Error initializing Web Audio browser");
-    alert('Error web audio browser')
+    alert('Error web audio browser' + e)
   }
 
   if (navigator.getUserMedia) {
     navigator.getUserMedia({audio: true}, startUserMedia, function(e) {
       console.log("No live audio input in this browser");
-    alert('Error input'  +e)
     });
-    alert(navigator.getUserMedia)
   } else {
-    alert('no web audiosupport')
-
     console.log("No web audio support in this browser");
   }
 };

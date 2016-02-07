@@ -1,7 +1,7 @@
 'use strict';
 
-var CODE_FREQUENCY = 600;
-var CODING_SPEED = 5;
+var CODE_FREQUENCY = 1000;
+var CODING_SPEED = 2;
 
 var Typer = {
 	
