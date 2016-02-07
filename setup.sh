@@ -37,9 +37,3 @@ apt-get install node
 # install mrrobot
 cd ~/mrrobot
 npm install
-
-# boot robot at startup
-cp start_mr_robot /etc/init.d/
-chmod +x /etc/init.d/start_mr_robot
-ln -s /etc/init.d/start_mr_robot /etc/rc.d/
-reboot
