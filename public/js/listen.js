@@ -164,9 +164,7 @@ window.onload = function() {
   });
 
   try {
-    window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext || 
-      window.oAudioContext || window.msAudioContext;
-    alert(window.AudioContext)
+    window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext || window.oAudioContext;
     navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
     window.URL = window.URL || window.webkitURL;
     audioContext = new AudioContext();
