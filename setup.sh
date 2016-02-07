@@ -26,7 +26,7 @@ apt-get install bison libasound2-dev swig python-dev mplayer
 # sudo make install
 
 # miscellaneous dependencies
-apt-get install xautomation espeak chromium-browser
+apt-get install xautomation espeak iceweasel
 
 # install node
 curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
