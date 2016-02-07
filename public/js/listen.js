@@ -164,23 +164,22 @@ window.onload = function() {
   });
 
   try {
-    window.AudioContext = window.AudioContext || window.webkitAudioContext;
+    window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext || 
+      window.oAudioContext || window.msAudioContext;
     alert(window.AudioContext)
-    alert(window.webkitAudioContext)
     navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
     window.URL = window.URL || window.webkitURL;
     audioContext = new AudioContext();
   } catch (e) {
-    console.error("Error initializing Web Audio browser");
-    alert('Error web audio browser' + e)
+    alert("Error initializing Web Audio browser, " + e);
   }
 
   if (navigator.getUserMedia) {
     navigator.getUserMedia({audio: true}, startUserMedia, function(e) {
-      console.log("No live audio input in this browser");
+      alert("No live audio input in this browser");
     });
   } else {
-    console.log("No web audio support in this browser");
+    alert("No web audio support in this browser");
   }
 };
 
