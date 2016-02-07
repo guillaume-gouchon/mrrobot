@@ -50,6 +50,7 @@ var isSpeaking = false;
 function updateHyp(hyp) {
   console.log(hyp);
   if (!isSpeaking) {
+    alert(hyp)
     if (hyp.indexOf('TELL A JOKE') >= 0 || hyp.indexOf('RACONTE UNE BLAGUE') >= 0) {
       isSpeaking = true;
       recorder.stop();
@@ -169,16 +170,16 @@ window.onload = function() {
     audioContext = new AudioContext();
   } catch (e) {
     console.error("Error initializing Web Audio browser");
-    $('body').prepend('Error web audio browser')
+    alert('Error web audio browser')
   }
 
   if (navigator.getUserMedia) {
     navigator.getUserMedia({audio: true}, startUserMedia, function(e) {
       console.log("No live audio input in this browser");
-    $('body').prepend('Error input'  +e)
+    alert('Error input'  +e)
     });
   } else {
-    $('body').prepend('no web audiosupport')
+    alert('no web audiosupport')
 
     console.log("No web audio support in this browser");
   }
