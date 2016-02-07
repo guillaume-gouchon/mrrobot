@@ -39,6 +39,8 @@ app.listen(3000, function () {
 	console.log('MrRobot has started on port 3000');
 	var command = 'chromium-browser --kiosk http://localhost:3000';
 	exec(command, function (error, stdout, stderr) {
+		console.error(stderr);
+		console.log(stdout);
 	});
 });
 
