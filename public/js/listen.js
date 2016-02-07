@@ -169,13 +169,17 @@ window.onload = function() {
     audioContext = new AudioContext();
   } catch (e) {
     console.error("Error initializing Web Audio browser");
+    $('body').prepend('Error web audio browser')
   }
 
   if (navigator.getUserMedia) {
     navigator.getUserMedia({audio: true}, startUserMedia, function(e) {
       console.log("No live audio input in this browser");
+    $('body').prepend('Error input'  +e)
     });
   } else {
+    $('body').prepend('no web audiosupport')
+
     console.log("No web audio support in this browser");
   }
 };
