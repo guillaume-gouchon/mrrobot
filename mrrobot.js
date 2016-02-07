@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 
+var exec = require('child_process').exec;
 var express = require('express');
 var app = express();
 
@@ -8,7 +9,6 @@ var speak = require('./controllers/speak');
 var joke = require('./controllers/joke');
 var sentences = require('./data/sentences');
 
-var exec = require('child_process').exec;
 
 // setup API and client
 app.use('/', express.static(__dirname + '/public'));
@@ -37,11 +37,13 @@ app.post('/api/fun', function (req, res) {
 
 app.listen(3000, function () {
 	console.log('MrRobot has started on port 3000');
-	var command = 'chromium-browser --kiosk http://localhost:3000';
-	exec(command, function (error, stdout, stderr) {
-		console.error(stderr);
-		console.log(stdout);
-	});
+	setTimeout(function () {
+		var command = 'chromium-browser --kiosk http://localhost:3000';
+		exec(command, function (error, stdout, stderr) {
+			console.error(stderr);
+			console.log(stdout);
+		});
+	}, 10000);
 });
 
 setTimeout(function() {
