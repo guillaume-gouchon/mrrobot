@@ -72,10 +72,12 @@ function updateHyp(hyp) {
 // Callback function once the user authorises access to the microphone
 // in it, we instanciate the recorder
 function startUserMedia(stream) {
+  alert('bite')
   var input = audioContext.createMediaStreamSource(stream);
   window.firefox_audio_hack = input; 
   var audioRecorderConfig = {errorCallback: function(x) {console.error("Error from recorder: " + x);}};
   recorder = new AudioRecorder(input, audioRecorderConfig);
+  alert(recorder)
   // If a recognizer is ready, we pass it to the recorder
   if (recognizer) recorder.consumers = [recognizer];
   recorderReady = true;
@@ -92,7 +94,7 @@ var startRecording = function() {
 var recognizerReady = function() {
   recognizerReady = true;
   console.log("Recognizer ready");
-  startRecording()
+  startRecording();
 };
 
 // This adds a grammar from the grammars array
