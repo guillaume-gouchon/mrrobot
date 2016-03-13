@@ -37,16 +37,9 @@ app.post('/api/fun', function (req, res) {
 
 app.listen(3000, function () {
 	console.log('MrRobot has started on port 3000');
-	// setTimeout(function () {
-	// 	var command = 'chromium-browser --kiosk http://localhost:3000';
-	// 	exec(command, function (error, stdout, stderr) {
-	// 		console.error(stderr);
-	// 		console.log(stdout);
-	// 	});
-	// }, 10000);
 });
 
 setTimeout(function() {
 	// say startup fun
 	speak.say(sentences.getStartup());
-}, 3000);
+}, 10000);

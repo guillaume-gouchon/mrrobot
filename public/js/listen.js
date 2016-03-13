@@ -50,15 +50,14 @@ var isSpeaking = false;
 function updateHyp(hyp) {
   console.log(hyp);
   if (!isSpeaking) {
-    alert(hyp)
-    if (hyp.indexOf('TELL A JOKE') >= 0 || hyp.indexOf('RACONTE UNE BLAGUE') >= 0) {
+    if (hyp.indexOf('JOKE') >= 0 || hyp.indexOf('BLAGUE') >= 0) {
       isSpeaking = true;
       recorder.stop();
       $.post('/api/joke', function () {
         isSpeaking = false;
         recorder.start();
       });
-    } else if (hyp.indexOf('IT WAS HUGE') >= 0 || hyp.indexOf('ELLE EST éNORME') >= 0 || hyp.indexOf('IL EST éNORME') >= 0) {
+    } else if (hyp.indexOf('WAS HUGE') >= 0 || hyp.indexOf('EST éNORME') >= 0) {
       isSpeaking = true;
       recorder.stop();
       $.post('/api/fun', function () {
@@ -72,12 +71,10 @@ function updateHyp(hyp) {
 // Callback function once the user authorises access to the microphone
 // in it, we instanciate the recorder
 function startUserMedia(stream) {
-  alert('bite')
   var input = audioContext.createMediaStreamSource(stream);
   window.firefox_audio_hack = input; 
   var audioRecorderConfig = {errorCallback: function(x) {console.error("Error from recorder: " + x);}};
   recorder = new AudioRecorder(input, audioRecorderConfig);
-  alert(recorder)
   // If a recognizer is ready, we pass it to the recorder
   if (recognizer) recorder.consumers = [recognizer];
   recorderReady = true;
