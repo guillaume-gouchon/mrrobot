@@ -50,14 +50,14 @@ var isSpeaking = false;
 function updateHyp(hyp) {
   console.log(hyp);
   if (!isSpeaking) {
-    if (hyp.indexOf('JOKE') >= 0 || hyp.indexOf('BLAGUE') >= 0) {
+    if (hyp.indexOf('TELL JOKE') >= 0 || hyp.indexOf('RACONTE BLAGUE') >= 0) {
       isSpeaking = true;
       recorder.stop();
       $.post('/api/joke', function () {
         isSpeaking = false;
         recorder.start();
       });
-    } else if (hyp.indexOf('HUGE') >= 0 || hyp.indexOf('éNORME') >= 0) {
+    } else if (hyp.indexOf('WAS HUGE') >= 0 || hyp.indexOf('EST éNORME') >= 0) {
       isSpeaking = true;
       recorder.stop();
       $.post('/api/fun', function () {
