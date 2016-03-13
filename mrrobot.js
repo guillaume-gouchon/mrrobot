@@ -42,4 +42,4 @@ app.listen(3000, function () {
 setTimeout(function() {
 	// say startup fun
 	speak.say(sentences.getStartup());
-}, 10000);
+}, 25000);

@@ -57,7 +57,7 @@ function updateHyp(hyp) {
         isSpeaking = false;
         recorder.start();
       });
-    } else if (hyp.indexOf('WAS HUGE') >= 0 || hyp.indexOf('EST éNORME') >= 0) {
+    } else if (hyp.indexOf('HUGE') >= 0 || hyp.indexOf('éNORME') >= 0) {
       isSpeaking = true;
       recorder.stop();
       $.post('/api/fun', function () {
