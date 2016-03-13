@@ -20,9 +20,8 @@ var OUTROS = [
 	'Ah! Ah! Ah! Je me tords de rire.',
 	'Vous avez compris, stupides humains ?',
 	'Je l\'ai mal raconté mais normalement, elle est drôle.',
-	'Vous ne comprenez rien à l\'humour de robot.',
+	'J\'ai racontée cette blague a R2D2 un jour mais il ne l\'a pas comprise',
 	'C était une blague avant-gardiste.',
-	'Je préfère la blague 00110101, mais bon...',
 	'Guillaume Gouchon m\'a tout appris, surtout l\'humour fin.'
 ];
 
